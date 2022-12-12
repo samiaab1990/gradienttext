@@ -39,25 +39,30 @@ make_gradient<-function(string_lab=NULL, colors=NULL)
 
   lab = as.character(string_lab)
 
+  lab_nospace = gsub(" ","",lab)
+
   pal = colorRampPalette(colors)
 
-  pal_n<-pal(nchar(lab))
+  pal_n<-pal(nchar(lab_nospace))
 
   make_lab<-""
 
+  j = 0
+
   for(i in 1:nchar(lab))
   {
-    j = i
+
 
     if (substr(lab,i,i) !=" ")
     {
+      j = j + 1
       make_lab = paste0(make_lab,"<span style='color:",pal_n[j],";'>",substr(lab,i,i),"</span>")
-    } else
-    {
-      make_lab<-paste0(make_lab," ")
-      j = i - 1
     }
 
+    else
+    {
+      make_lab<-paste0(make_lab," ")
+    }
   }
   return(make_lab)
 }
