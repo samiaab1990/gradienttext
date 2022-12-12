@@ -1,4 +1,4 @@
-# gradienttext
+# <span style='color:#D38312;'>g</span><span style='color:#CF7B1B;'>r</span><span style='color:#CB7424;'>a</span><span style='color:#C76C2E;'>d</span><span style='color:#C36537;'>i</span><span style='color:#BF5E40;'>e</span><span style='color:#BB564A;'>n</span><span style='color:#B74F53;'>t</span><span style='color:#B3485C;'>t</span><span style='color:#AF4066;'>e</span><span style='color:#AB396F;'>x</span><span style='color:#A83279;'>t</span>
 
 gradienttext is an R package that works with the [`ggtext`](https://github.com/wilkelab/ggtext) package to create gradient text labels on ggplot graphs. 
 
