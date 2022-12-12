@@ -1,7 +1,7 @@
 #' Make Gradient
 #'
 #' @description 'This function takes a string label and a vector of at least two colors as an argument and applies gradient colors to the text. The function must be used with either geom_richtext, geom_textbox, element_markdown or element_textbox functions from ggtext.
-#' @param string_lab character(1) string, a text label to which the gradient colors will be applied to
+#' @param string_lab, an input that can be character, numeric or factor to which the gradient colors will be applied to after coerced into a character string
 #' @param colors character(...) string, a vector of at least two characters representing valid color names or hex codes,uses linear interpolation to create gradient color scheme
 #'
 #' @importFrom grDevices colorRampPalette
