@@ -15,5 +15,5 @@ make_gradient(string_lab = NULL, colors = NULL)
 make_lab, the text label with html span tags that apply the gradient color scheme specified in the colors argument
 }
 \description{
-'This function takes a string label and a vector of at least two colors as an argument and applies gradient colors to the text. The function must be used with either geom_richtext, geom_textbox, render_markdown or render_textbox functions from ggtext.
+'This function takes a string label and a vector of at least two colors as an argument and applies gradient colors to the text. The function must be used with either geom_richtext, geom_textbox, element_markdown or element_textbox functions from ggtext.
 }

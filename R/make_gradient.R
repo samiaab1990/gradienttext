@@ -1,6 +1,6 @@
 #' Make Gradient
 #'
-#' @description 'This function takes a string label and a vector of at least two colors as an argument and applies gradient colors to the text. The function must be used with either geom_richtext, geom_textbox, render_markdown or render_textbox functions from ggtext.
+#' @description 'This function takes a string label and a vector of at least two colors as an argument and applies gradient colors to the text. The function must be used with either geom_richtext, geom_textbox, element_markdown or element_textbox functions from ggtext.
 #' @param string_lab character(1) string, a text label to which the gradient colors will be applied to
 #' @param colors character(...) string, a vector of at least two characters representing valid color names or hex codes,uses linear interpolation to create gradient color scheme
 #'
@@ -15,15 +15,31 @@ make_gradient<-function(string_lab=NULL, colors=NULL)
   }
 
 
-  if(is.null(string_lab) | !is.character(string_lab))
+  if (is.null(string_lab))
   {
-    stop("Function requires character string.")
+    stop("Function requires label.")
   }
 
 
-  pal = colorRampPalette(colors)
+  if (is.factor(string_lab))
+  {
+      lab_list<-list()
 
-  lab = string_lab
+      for(i in string_lab)
+      {
+        lab_list <-append(lab_list, make_gradient(i, colors=colors))
+      }
+
+      make_lab<-unlist(lab_list)
+
+      return(make_lab)
+
+  }
+
+
+  lab = as.character(string_lab)
+
+  pal = colorRampPalette(colors)
 
   pal_n<-pal(nchar(lab))
 
@@ -45,3 +61,12 @@ make_gradient<-function(string_lab=NULL, colors=NULL)
   }
   return(make_lab)
 }
+
+check_gg<-function(x)
+{
+  if(is.factor(x))
+  {
+    print(x)
+  }
+}
+
