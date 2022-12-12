@@ -1,11 +1,18 @@
 Package: gradienttext
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Apply gradient text on ggplot2 titles and labels 
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: person("Samia", "B", "samiaab1990@gmail.com", role = c("aut", "cre"))
+Maintainer: Samia B <samiaab1990@gmail.com>
+Description: Provides gradient color capability on ggplot2 titles and text labels. Primary function takes a string label and a vector of at least two colors as an argument and applies gradient colors to the text using linear interpolation. The function must be used with either geom_richtext, geom_textbox, render_markdown or render_textbox functions from the ggtext package. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+  grDevices
+Suggests:
+    ggplot2,
+    ggtext,
+    testthat (>= 3.0.0)
+RoxygenNote: 7.2.3
+Config/testthat/edition: 3
