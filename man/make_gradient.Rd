@@ -7,7 +7,7 @@
 make_gradient(string_lab = NULL, colors = NULL)
 }
 \arguments{
-\item{string_lab}{character(1) string, a text label to which the gradient colors will be applied to}
+\item{string_lab, }{an input that can be character, numeric or factor to which the gradient colors will be applied to after coerced into a character string}
 
 \item{colors}{character(...) string, a vector of at least two characters representing valid color names or hex codes,uses linear interpolation to create gradient color scheme}
 }
