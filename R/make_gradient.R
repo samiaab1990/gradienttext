@@ -62,11 +62,5 @@ make_gradient<-function(string_lab=NULL, colors=NULL)
   return(make_lab)
 }
 
-check_gg<-function(x)
-{
-  if(is.factor(x))
-  {
-    print(x)
-  }
-}
+
 
