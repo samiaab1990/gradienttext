@@ -30,7 +30,7 @@ plot.title = element_markdown(size=30, hjust=.5)
 <img src='./man/figures/iris_data_title_example.png'>
 
 
-## Applying gradient colors to aesthetic mapping
+## Applying gradient colors to labels with aesthetic mapping
 
 ```
 library(gradienttext)
@@ -44,7 +44,7 @@ geom_richtext(aes(label = make_gradient(string_lab=Species, colors=colors)), fil
 ```
 <img src='./man/figures/iris_data_aes_example.png'>
 
-## Applying gradient colors to text labels in general
+## Applying gradient colors to general text labels 
 
 ```
 library(gradienttext)
