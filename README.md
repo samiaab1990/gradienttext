@@ -1,7 +1,5 @@
 # gradienttext
 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/samiaab1990/gradienttext)
-
 gradienttext is an R package that works with the [`ggtext`](https://github.com/wilkelab/ggtext) package to create gradient text labels on ggplot graphs. 
 
 You can install the development version of gradienttext from GitHub with:
