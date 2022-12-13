@@ -4,10 +4,10 @@
 \alias{make_gradient}
 \title{Make Gradient}
 \usage{
-make_gradient(string_lab = NULL, colors = NULL)
+make_gradient(label = NULL, colors = NULL)
 }
 \arguments{
-\item{string_lab, }{an input that can be character, numeric or factor to which the gradient colors will be applied to after coerced into a character string}
+\item{label, }{an input that can be character, numeric or factor to which the gradient colors will be applied to after coerced into a character string}
 
 \item{colors}{character(...) string, a vector of at least two characters representing valid color names or hex codes,uses linear interpolation to create gradient color scheme}
 }

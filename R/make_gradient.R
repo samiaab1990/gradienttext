@@ -1,13 +1,13 @@
 #' Make Gradient
 #'
 #' @description 'This function takes a string label and a vector of at least two colors as an argument and applies gradient colors to the text. The function must be used with either geom_richtext, geom_textbox, element_markdown or element_textbox functions from ggtext.
-#' @param string_lab, an input that can be character, numeric or factor to which the gradient colors will be applied to after coerced into a character string
+#' @param label, an input that can be character, numeric or factor to which the gradient colors will be applied to after coerced into a character string
 #' @param colors character(...) string, a vector of at least two characters representing valid color names or hex codes,uses linear interpolation to create gradient color scheme
 #'
 #' @importFrom grDevices colorRampPalette
 #' @return make_lab, the text label with html span tags that apply the gradient color scheme specified in the colors argument
 #' @export
-make_gradient<-function(string_lab=NULL, colors=NULL)
+make_gradient<-function(label=NULL, colors=NULL)
 {
   if (is.null(colors) | length(colors) <=1)
   {
@@ -15,17 +15,17 @@ make_gradient<-function(string_lab=NULL, colors=NULL)
   }
 
 
-  if (is.null(string_lab))
+  if (is.null(label))
   {
     stop("Function requires label.")
   }
 
 
-  if (is.factor(string_lab))
+  if (is.factor(label))
   {
       lab_list<-list()
 
-      for(i in string_lab)
+      for(i in label)
       {
         lab_list <-append(lab_list, make_gradient(i, colors=colors))
       }
@@ -37,7 +37,7 @@ make_gradient<-function(string_lab=NULL, colors=NULL)
   }
 
 
-  lab = as.character(string_lab)
+  lab = as.character(label)
 
   lab_nospace = gsub(" ","",lab)
 

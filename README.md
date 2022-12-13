@@ -22,7 +22,7 @@ library(ggtext)
 
 ggplot(data = iris, aes(x = Sepal.Length, y= Sepal.Width))+
 geom_point()+
-labs(title = make_gradient(string_lab = "Iris Data Example", colors=c("green","blue")))+
+labs(title = make_gradient(label = "Iris Data Example", colors=c("green","blue")))+
 theme(
 plot.title = element_markdown(size=30, hjust=.5)
 )
@@ -40,7 +40,7 @@ library(ggtext)
 colors = c("#C6FFDD","#FBD786","#f7797d")
 ggplot(data = iris, aes(x = Sepal.Length, y= Sepal.Width))+
 geom_point()+
-geom_richtext(aes(label = make_gradient(string_lab=Species, colors=colors)), fill="#000000")
+geom_richtext(aes(label = make_gradient(label=Species, colors=colors)), fill="#000000")
 ```
 <img src='./man/figures/iris_data_aes_example.png'>
 
@@ -55,6 +55,13 @@ library(tibble)
 random_dat = tibble(x = 5, y=5)
 ggplot(data = random_dat, aes(x=x,y=y))+
 geom_point()+
-geom_richtext(label=make_gradient(string_lab ="this is a label", colors=c("#FBDA61","#BD5AFF")), fill="#000000", size=5)
+geom_richtext(label=make_gradient(label ="this is a label", colors=c("#FBDA61","#BD5AFF")), fill="#000000", size=5)
 ```
 <img src='./man/figures/iris_data_label_example.png'>
+
+iris %>%
+group_by(Species) %>%
+summarise(sum = sum(Sepal.Width, na.rm=TRUE)) %>%
+ggplot(aes(x=Species,y=sum))+
+geom_col(fill="#CCCCCC")+
+geom_richtext(aes(label=make_gradient(Species,colors=c("green","blue"))), size=5, fill=NA, position = position_stack(vjust=.5), label.colour=NA)
