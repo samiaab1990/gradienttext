@@ -12,7 +12,7 @@ devtools::install_github("samiaab1990/gradienttext")
 
 # Examples
 
-## Applying gradient colors to titles, subtitles and captions. 
+## Applying gradient colors to titles, subtitles and captions  
 
 ```
 library(gradienttext)
@@ -20,15 +20,41 @@ library(ggplot2)
 library(ggtext)
 
 
-ggplot(data = iris, aes(x = Sepal.Length, y= Sepal.Width))+
+ggplot(data = iris, aes(x = Sepal.Length, y= Sepal.Width, color=Sepal.Width))+
 geom_point()+
-labs(title = make_gradient(label = "Iris Data Example", colors=c("green","blue")))+
+scale_color_gradient(low="green",high="blue")+
+labs(title = make_gradient(label = "Iris Data Example", colors=c("green","blue")),
+     subtitle = make_gradient(label="With a Subtitle", colors=c("green","blue")),
+     caption = make_gradient(label="And Caption", colors=c("green","blue")))+
 theme(
-plot.title = element_markdown(size=30, hjust=.5)
+plot.title = element_markdown(size=30, hjust=.5),
+plot.subtitle = element_markdown(size=20, hjust=.5),
+plot.caption = element_markdown(size=10,hjust=.5)
 )
 ```
 <img src='./man/figures/iris_data_title_example.png'>
 
+## Applying gradient colors to axis labels
+
+```
+library(gradienttext)
+library(ggplot2)
+library(ggtext)
+
+
+ggplot(data = iris, aes(x = Sepal.Length, y= Sepal.Width, color=Sepal.Width))+
+geom_point()+
+scale_color_gradient(low="green",high="blue")+
+labs(title = "Iris Data Example")+
+xlab(make_gradient(label="Sepal Length", colors=c("green","blue")))+
+ylab(make_gradient(label="Sepal Width", colors=c("green","blue")))+
+theme(
+plot.title = element_text(size=30, hjust=.5),
+axis.title.x = element_markdown(size=10),
+axis.title.y = element_markdown(size=10)
+)
+```
+<img src='./man/figures/iris_data_xy_labs.png'>
 
 ## Applying gradient colors to labels with aesthetic mapping
 
