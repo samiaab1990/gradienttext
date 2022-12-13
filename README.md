@@ -59,9 +59,3 @@ geom_richtext(label=make_gradient(label ="this is a label", colors=c("#FBDA61","
 ```
 <img src='./man/figures/iris_data_label_example.png'>
 
-iris %>%
-group_by(Species) %>%
-summarise(sum = sum(Sepal.Width, na.rm=TRUE)) %>%
-ggplot(aes(x=Species,y=sum))+
-geom_col(fill="#CCCCCC")+
-geom_richtext(aes(label=make_gradient(Species,colors=c("green","blue"))), size=5, fill=NA, position = position_stack(vjust=.5), label.colour=NA)
